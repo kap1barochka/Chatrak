@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRealm Store</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/Shop.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+        <a href="../Home.html" class="logo">Chatrak <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 640 640"><path fill="rgb(127, 88, 21)" d="M232 120L232 160L153.9 160C139.6 160 128 171.6 128 185.9C128 189.9 128.9 193.9 130.7 197.5L164.1 264.3C152.7 266.1 143.9 276 143.9 288C143.9 301.3 154.6 312 167.9 312L173.5 312L159.9 448L103.7 518.3C98.7 524.6 95.9 532.4 95.9 540.5C95.9 560.1 111.8 576 131.4 576L380.3 576C399.9 576 415.8 560.1 415.8 540.5C415.8 532.4 413.1 524.6 408 518.3L352 448L338.4 312L344 312C357.3 312 368 301.3 368 288C368 276.1 359.3 266.1 347.8 264.3L381.2 197.5C383 193.9 383.9 189.9 383.9 185.9C383.9 171.6 372.3 160 358 160L279.9 160L279.9 120L295.9 120C309.2 120 319.9 109.3 319.9 96C319.9 82.7 309.3 72 296 72L280 72L280 56C280 42.7 269.3 32 256 32C242.7 32 232 42.7 232 56L232 72L216 72C202.7 72 192 82.7 192 96C192 109.3 202.7 120 216 120L232 120zM389.8 343.6L398.3 429.1L445.7 488.3L449.9 494C459.1 507.7 464 523.9 464 540.5C464 553.2 461.2 565.3 456.1 576L539.2 576C559.5 576 576 559.5 576 539.2C576 531.9 573.8 524.8 569.8 518.8L544 480.1L544 416.1L557.3 402.8C569.3 390.8 576 374.5 576 357.5L576 256C576 238.3 561.7 224 544 224C526.3 224 512 238.3 512 256L512 272L480 272L480 256C480 238.3 465.7 224 448 224C430.3 224 416 238.3 416 256L416 288C416 310.4 405.8 330.4 389.8 343.6z"/></svg></a>
+
+        <nav class="navbar">
+            <a href="../Home.html">home</a>
+            <a href="Shop.html">store</a>
+        </nav>
+
+        <!-- Иконка корзины в шапке -->
+        <div class="cart-icon-container" onclick="openCart()" style="cursor: pointer;">
+            <i class="fas fa-shopping-cart" style="font-size: 2.5rem; color: var(--main-color);"></i>
+            <span id="count" style="font-size: 1.8rem; color: var(--main-color); font-weight: bold; margin-left: .5rem;">0</span>
+        </div>
+    </header>
+
+    <!-- Заголовок страницы -->
+    <section style="padding-top: 12rem; text-align: center;">
+        <h1 class="heading">Store <span>take home a piece of history</span></h1>
+    </section>
+
+    <!-- ВИЗУАЛЬНАЯ СЕТКА КАТЕГОРИЙ -->
+    <section class="visual-categories">
+        <h2 style="text-align: center; font-size: 2.5rem; color: var(--main-color); margin-bottom: 2rem; text-transform: uppercase;">
+            Specializing in fine chess products from around the world
+        </h2>
+        
+        <div class="cat-container">
+            <!-- Верхний ряд (3 большие категории) -->
+            <div class="cat-row-top">
+            <!-- Теперь это не "Все товары", а "Фигуры" -->
+
+                <div class="cat-box active" data-filter="pieces">
+                    <h3>Chess Pieces</h3>
+                    <img src="../pattern/Ablojkeq/chess-pieces-category.webp" alt="Pieces">
+                    <p>Wood, Plastic, Metal & More</p>
+                </div>
+
+                <div class="cat-box center-box" data-filter="sets">
+                    <h3 style="font-size: 2rem; margin-bottom: 0;">Chess</h3>
+                    <h3 style="font-size: 4rem; margin-top: -1rem;">Sets</h3>
+                    <img src="../pattern/Ablojkeq/chess-sets-category.webp" alt="Sets">
+                    <p>Wood, Plastic, Metal, Theme & More</p>
+                </div>
+
+                <div class="cat-box" data-filter="boards">
+                    <h3>Chess Boards</h3>
+                    <img src="../pattern/Ablojkeq/chess-boards-category.webp" alt="Boards">
+                    <p>Wood, Vinyl Rollup, Floppy & More</p>
+                </div>
+            </div>
+
+            <!-- Нижний ряд (5 маленьких категорий) -->
+            <div class="cat-row-bottom">
+                <div class="cat-box small" data-filter="supplies">
+                    <h3>Chess Supplies</h3>
+                    <img src="../pattern/dproc-club/sovorecnelu-gorciqner/chess-rules-companion-1500__17677.jpg" alt="Supplies">
+                </div>
+                <div class="cat-box small" data-filter="storage">
+                    <h3>Chess Storage</h3>
+                    <img src="../pattern/Ablojkeq/chess-storage-category.webp" alt="Storage">
+                </div>
+                <div class="cat-box small" data-filter="computers">
+                    <h3>Chess Computers</h3>
+                    <img src="../pattern/Ablojkeq/chess-computer-category.webp" alt="Computers">
+                </div>
+                <div class="cat-box small" data-filter="clocks">
+                    <h3>Chess Clocks</h3>
+                    <img src="../pattern/Ablojkeq/chess-clocks-category.webp" alt="Clocks">
+                </div>
+                <div class="cat-box small" data-filter="outlet">
+                    <h3>Chess Bags</h3>
+                    <img src="///" alt="Outlet">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Сетка товаров (STORE GRID) -->
+    <section class="store-grid" id="item-grid">
+        <div class="box-container">
+            
+            <!-- ТОВАР 1: НАБОРЫ (sets) -->
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-pieces-wood-deluxe-old-club-djp375-both-pieces-1500x1235__50550.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+            
+            
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-1849-distressed-both-pieces-1500x1190__01163.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-bohemian-bns400-both-pieces-1500x1290__40953.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-british-staunton-rosewood-boxwood-pieces-both-pieces-1100x970__03520.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-bucephalus-paduak-boxwood-both-pieces-1500x1300__45583.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-chetak-padauk-boxwood-both-pieces-1500x1200__60691.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-copenhagen-padauk-boxwood-pieces-profile-both-thumb-1500x1220__35909.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-ebony-boxwood-pieces-both-1500x1210__98614.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-french-lardy-golden-rosewood-boxwood-both-pieces-1500x1254__82140.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-german-knight-ebonized-boxwood-both-thumb-1100x980__30278.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-hengroen-ebony-boxwood-pieces-profile-both-thumb-1500x1220__87397.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-llbb-burnt-boxwood-boxwood-both-pieces-1500x1230__17645.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-marengo-padauk-boxwood-both-pieces-1280x956__35942.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-northern-upright-ebony-distressed-boxwood-both-pieces-1500x1260__95812.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-old-english-classic-rosewood-boxwood-bothpieces-1500x1180__39105.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic//chess-set-palomo-ebony-boxwood-both-pieces-1280x1053__60750.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-parker-burnt-boxwood-pieces-both-1280x1072__78633.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-patton-ebony-boxwood-both-pieces-1100x872__88011.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-reykjavic-golden-rosewood-boxwood-pieces-both-1500x1220__52501.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-staunton-wood-fke400-both-pieces-1500x1210__31659.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-staunton-wood-ldk400-acacia-both-pieces-1500x1220__31732.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-strategos-ebony-boxwood-both-pieces-1280x956__99868.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-tencendur-padauk-boxwood-pieces-both-1280x974__44944.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic//chess-set-wellington-padauak-both-pieces-1100x920__29588.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-wood-cambridge-springs-ebonized-aged-boxwood-both-pieces-1500x1160__70085.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-wood-columbian-knight-staunton-ebony-boxwood-both-pieces-1500x1260__85308.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-wood-craftsman-ebony-boxwood-both-pieces-1500x1200__29755.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-wood-ner400-both-pieces-1100x900__97109.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-wood-staunton-fischer-spasky-both-pieces-1500x1160__69896.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-wood-staunton-hne440-both-pieces-1100x900__93369.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chess-set-zagreb-ebony-boxwood-both-pieces-side-by-side-1100x900__69485.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/chress-set-ilp375-both-pieces-1500x1180__32539.original.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/paytic/coffee-house-chess-pieces-black-boxwood-both-pieces-thumb-1500x1180__26041.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+     
+
+
+
+            
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/standart-pautic/chess-pieces-standard-staunton-3-walnut-both-pieces-1500x1210__41285.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/standart-pautic/chess-pieces-standard-staunton-3.5-walnut-both-pieces-1500x1260__96966.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/standart-pautic/chess-set-tournamant-standard-staunton-black-natural-pieces-both-1500x1310__91713.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="pieces" data-name="Luxury Chess Pieces" data-price="99" data-desc="Набор премиальных фигур ручной работы.">
+                <img src="../pattern/Xaxaqarer/standart-pautic/chess-set-tss375-walnut-stained-both-pieces-1500x1275__26277.jpg" alt="">
+                <h3>Luxury Chess Pieces</h3>
+                <span class="price">$99.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+
+
+
+            <!-- ТОВАР 3: ДОСКИ (boards) -->           
+ 
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/standart-paytic/chess-board-value-macassar-middle-view-1500x1045__86049.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/standart-paytic/chess-board-value-macassar-notation-middle-view-1500x1044__89187.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>            
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/standart-paytic/chess-board-value-mahogany-notation-middle-view-1500x1048__96719.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/standart-paytic/chess-board-value-walnut-middle-view-1500x1048__78454.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/standart-paytic/chess-board-value-walnut-notation-maple-border-middle-view-1500x1045__88350.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/standart-paytic/chess-board-wood-sunrise-mahogany-full-diagonal-view-1500x960__30422.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+
+
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-mission-craft-padauk-maple-middle-view-1200x790__39708.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-queens-gambit-medium-1400x955__97293.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-santos-rosewood-maple-medium-1400x955__11255.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-sycamore-mahogany-medium-1400x965__87065.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-walnut-burl-italfama-middle-view-1500x1030__57306.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-wood-black-ash-burl-high-gloss-full-view-1200x840__13936.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-wood-classic-mahogany-maple-full-view-1200x840__19892.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-wood-classic-walnut-maple-full-view-1280x840__96630.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-wood-deluxe-mahogany-maple-full-view-1100x725__64998.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-wood-deluxe-striped-ebony-maple-full-view-1100x725__55535.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-wood-olive-wood-black-medium-1400x955__73816.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-wood-padauk-bird's-eye-maple-molded-full-view-1100x725__27343.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+            
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/chess-board-wood-walnut-maple-molded-full-view-1100x720__26137.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/elm-burl-bird's-eye-maple-black-border-board-800__56729.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/italfama-elm-burl-erable-chess-board-standard-view-1085x714__30981.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/mission-craft-solid-walnut-maple-chess-boards-410x269__03474.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/mission-craft-solid-wood-zebrawood-maple-chess-boards-410x269__73185.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/walnut-burl-maple-molded-edge-chess-board-medium-view-1500x1008__93914.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/walnut-maple-deluxe-chess-boards-410x269__34111.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/paytic-premium/wood-chess-board-mahogany-maple-molded-edge-standard-view-1085x706__55888.original.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+
+
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/shkafchikov-paytic/chess-case-black-large-drawer-open-1500x875__06794.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/shkafchikov-paytic/chess-case-black-small-drawer-open-1500x860__98505.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/shkafchikov-paytic/chess-case-large-elm-burl-drawer-open-1500x855__08967.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/shkafchikov-paytic/chess-case-two-drawer-small-open-1400x850__65262.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/shkafchikov-paytic/chess-table-tav86-with-drawer-front-view-mid-close-1400x1100__65601.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/shkafchikov-paytic/folding-chess-case-macassar-closed-1500x850__73535.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/shkafchikov-paytic/folding-chess-case-mahogany-closed-1500X848__47871.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/shkafchikov-paytic/large-tuscan-marbe-wood-two-drawer-chess-case-full-view-1500x820__72659.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/shkafchikov-paytic/leatherette_chess_board_212l_black_brown_1100x680__72708.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/shkafchikov-paytic/small-alabaster-case-drawer-closed-1400x750__92513.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/shkafchikov-paytic/small-elm-burl-case-1400x750__34026.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="store-box" data-category="boards" data-name="Luxury Wood Board" data-price="120" data-desc="Шикарная доска из красного дерева.">
+                <img src="../pattern/taxtakner/shkafchikov-paytic/small-elm-burl-case-1400x750__62424.jpg" alt="">
+                <h3>Luxury Wood Board</h3>
+                <span class="price">$120.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+
+
+            <!-- ТОВАР 4: КОМПЬЮТЕРЫ (computers) -->
+            <div class="store-box" data-category="computers" data-name="ChessGenius Pro" data-price="259" data-desc="The Millennium ChessGenius Pro Wood Edition">
+                <img src="../image/Elektro.jpg" alt="">
+                <h3>ChessGenius Pro</h3>
+                <span class="price">$259.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- ТОВАР 5: АКСЕССУАРЫ КЛУБА (supplies) -->
+            <div class="store-box" data-category="supplies" data-name="Carry-All Plastic Set" data-price="51" data-desc="Standard Club Carry-All Plastic Chess Set.">
+                <img src="../image/Nabor51.jpg" alt="">
+                <h3>Carry-All Plastic Set</h3>
+                <span class="price">$51.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+                        <div class="store-box" data-category="supplies" data-name="Carry-All Plastic Set" data-price="51" data-desc="Standard Club Carry-All Plastic Chess Set.">
+                <img src="../image/Nabor51.jpg" alt="">
+                <h3>Carry-All Plastic Set</h3>
+                <span class="price">$51.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- ТОВАР 6: АУТЛЕТ (outlet) -->
+            <div class="store-box" data-category="outlet" data-name="Large Napoleon Set" data-price="1499" data-desc="Large Napoleon Theme Hand Painted Metal Chess Set with Elm Burl Chess Case">
+                <img src="../image/Shaxmat1499.jpg" alt="">
+                <h3>Large Napoleon Set</h3>
+                <span class="price">$1499.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- ТОВАР 7: ЧАСЫ (clocks) -->
+            <div class="store-box" data-category="clocks" data-name="Digital Chess Clock" data-price="45" data-desc="Профессиональные шахматные часы с контролем времени.">
+                <img src="../pattern/Clock/chess-clock-basic-digital-black-1200x720__72182.jpg" alt="">
+                <h3>Digital Chess Clock</h3>
+                <span class="price">$45.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+
+                  <div class="store-box" data-category="clocks" data-name="Digital Chess Clock" data-price="45" data-desc="Профессиональные шахматные часы с контролем времени.">
+                      <img src="../pattern/Clock/chess-clock-basic-digital-blue-1200x720__98620.jpg" alt="">
+                      <h3>Digital Chess Clock</h3>
+                      <span class="price">$45.00</span><br>
+                      <button class="btn buy-btn">Add to Cart</button>
+                  </div>
+            
+                  <div class="store-box" data-category="clocks" data-name="Digital Chess Clock" data-price="45" data-desc="Профессиональные шахматные часы с контролем времени.">
+                      <img src="../pattern/Clock/chess-clock-basic-digital-red-1200x720__82848.jpg" alt="">
+                      <h3>Digital Chess Clock</h3>
+                      <span class="price">$45.00</span><br>
+                      <button class="btn buy-btn">Add to Cart</button>
+                  </div>
+
+                  <div class="store-box" data-category="clocks" data-name="Digital Chess Clock" data-price="45" data-desc="Профессиональные шахматные часы с контролем времени.">
+                      <img src="../pattern/Clock/chess-clock-basic-digital-tan-1200x720__43278.jpg" alt="">
+                      <h3>Digital Chess Clock</h3>
+                      <span class="price">$45.00</span><br>
+                      <button class="btn buy-btn">Add to Cart</button>
+                  </div>
+
+                  <div class="store-box" data-category="clocks" data-name="Digital Chess Clock" data-price="45" data-desc="Профессиональные шахматные часы с контролем времени.">
+                      <img src="../pattern/Clock/chess-clock-basic-digital-white-1200x720__82836.jpg" alt="">
+                      <h3>Digital Chess Clock</h3>
+                      <span class="price">$45.00</span><br>
+                      <button class="btn buy-btn">Add to Cart</button>
+                  </div>
+
+                  <div class="store-box" data-category="clocks" data-name="Digital Chess Clock" data-price="45" data-desc="Профессиональные шахматные часы с контролем времени.">
+                      <img src="../pattern/Clock/chess-clock-basic-digital-wood-grain-1200x720__03994.jpg" alt="">
+                      <h3>Digital Chess Clock</h3>
+                      <span class="price">$45.00</span><br>
+                      <button class="btn buy-btn">Add to Cart</button>
+                  </div>
+
+            <!-- ТОВАР 8: ХРАНЕНИЕ (storage) -->
+            <div class="store-box" data-category="storage" data-name="Wooden Chess Box" data-price="85" data-desc="Шкатулка для хранения шахматных фигур с мягкой обивкой.">
+                <img src="../image/Bobby.png" alt="">
+                <h3>Wooden Chess Box</h3>
+                <span class="price">$85.00</span><br>
+                <button class="btn buy-btn">Add to Cart</button>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <!-- МОДАЛЬНОЕ ОКНО ОПИСАНИЯ ТОВАРА -->
+    <div id="details-modal" class="modal">
+        <div class="modal-body details-card">
+            <span class="exit" onclick="closeDetails()">&times;</span>
+            <div class="details-content">
+                <img id="det-img" src="" alt="">
+                <div class="det-text">
+                    <h3 id="det-title" style="font-size: 2.5rem; color: var(--main-color);"></h3>
+                    <p id="det-desc" style="font-size: 1.5rem; padding: 1rem 0; line-height: 1.8; color: #666;"></p>
+                    <div id="det-prices" style="font-size: 1.6rem; color: var(--main-color); margin: 1.5rem 0; padding: 1.5rem; border: var(--border); border-radius: var(--border-radius);"></div>
+                    <button class="btn" id="det-buy-trigger">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО КОРЗИНЫ И ОФОРМЛЕНИЯ ЗАКАЗА -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-body">
+            <span class="exit" onclick="closeCart()">&times;</span>
+            <h2 style="font-size: 3rem; color: var(--main-color); margin-bottom: 2rem;">Your Basket</h2>
+            <div id="cart-list"></div>
+            <div id="cart-sum"></div>
+            
+            <div id="checkout-section" class="book-form" style="display:none; margin-top: 2rem;">
+                <div class="p-wrap"><div class="p-fill" id="fill"></div></div>
+                <input type="text" id="ship-addr" placeholder="Shipping Address" class="box-input">
+                <div style="display: flex; gap: 1rem;">
+                    <input type="text" placeholder="Card Number" class="box-input" style="flex: 2;">
+                    <input type="text" id="cvv-code" placeholder="CVV" maxlength="3" class="box-input" style="flex: 1;">
+                </div>
+                <button class="btn" onclick="finish()" style="width: 100%; text-align: center;">Confirm Order</button>
+            </div>
+            
+            <button class="btn" id="go-check" onclick="startCheck()" style="width: 100%; text-align: center;">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="../Home.html"><i class="fas fa-arrow-right"></i> Home</a>
+                <a href="Shop.html"><i class="fas fa-arrow-right"></i> Store</a>
+            </div>
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="#"><i class="fas fa-phone"></i> +123-456-7890</a>
+                <a href="#"><i class="fas fa-envelope"></i> info@chatrak.com</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Yerevan, Armenia</a>
+            </div>
+        </div>
+        <div class="credit">created by <span>Chatrak Team</span> | all rights reserved</div>
+    </section>
+
+    <!-- СКРИПТ -->
+    <script src="../js/Shop.js"></script>
+</body>
+</html>
